@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.slick-dots li button:before {
+  font-size: 10px !important;
+  color: #2563eb !important;
+  opacity: 1;
+}
+
+.slick-dots li.slick-active button:before {
+  color: #1e40af;
+  opacity: 1;
+}
+
