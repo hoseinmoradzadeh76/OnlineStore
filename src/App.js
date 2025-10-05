@@ -12,9 +12,9 @@ function App() {
     <ProductProvider>
       <CartProvider>
         <UIProvider>
-          <div className="flex flex-col min-h-screen">
+          <div className="flex flex-col min-h-screen font-poppins">
             <Header cartIconRef={cartIconRef} />
-            <main className="flex-grow py-20">
+            <main className="flex-grow pb-16 pt-24">
               <ProductCatalog cartIconRef={cartIconRef} />
             </main>
             <Footer />

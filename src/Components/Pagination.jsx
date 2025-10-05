@@ -8,7 +8,7 @@ const Pagination = ({ totalPages, currentPage, setCurrentPage }) => {
       <button
         onClick={() => setCurrentPage((p) => Math.max(p - 1, 1))}
         disabled={currentPage === 1}
-        className={`px-2 py-1 md:px-4 md:py-2 rounded ${
+        className={`px-2 py-1 md:px-4 lg:text-base text-sm md:py-2 rounded ${
           currentPage === 1
             ? "bg-gray-300 cursor-not-allowed"
             : "bg-blue-600 text-white"
@@ -37,7 +37,7 @@ const Pagination = ({ totalPages, currentPage, setCurrentPage }) => {
       <button
         onClick={() => setCurrentPage((p) => Math.min(p + 1, totalPages))}
         disabled={currentPage === totalPages}
-        className={`px-2 py-1 md:px-4 md:py-2 rounded ${
+        className={`px-3 py-1 md:px-4 md:py-2 lg:text-base text-sm rounded ${
           currentPage === totalPages
             ? "bg-gray-300 cursor-not-allowed"
             : "bg-blue-600 text-white"

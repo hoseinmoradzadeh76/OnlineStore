@@ -44,9 +44,9 @@ function PaymentPage({ onCancel, onSuccess }) {
 
 
   return (
-    <div className="max-w-md mx-auto p-6 border mt-4 rounded shadow-md">
-      <h2 className="text-xl font-bold mb-4">Payment page</h2>
-      <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+    <div className="md:max-w-md max-w-xs mx-auto p-6 border mt-4 rounded shadow-md">
+      <h2 className="md:text-xl text-lg font-bold mb-4">Payment page</h2>
+      <form onSubmit={handleSubmit} className="flex flex-col gap-2">
         <div>
           <input
             type="text"
@@ -56,9 +56,9 @@ function PaymentPage({ onCancel, onSuccess }) {
             className={`border px-3 py-2 rounded w-full ${errors.name ? "border-red-500" : ""
               }`}
           />
-          {errors.name && (
-            <p className="text-red-600 text-sm mt-1">{errors.name}</p>
-          )}
+          <p className="text-red-600 text-sm mt-1 h-5">
+            {errors.name || '\u00A0'}
+          </p>
         </div>
 
         <div>
@@ -71,9 +71,9 @@ function PaymentPage({ onCancel, onSuccess }) {
             className={`border px-3 py-2 rounded w-full ${errors.cardNumber ? "border-red-500" : ""
               }`}
           />
-          {errors.cardNumber && (
-            <p className="text-red-600 text-sm mt-1">{errors.cardNumber}</p>
-          )}
+          <p className="text-red-600 text-sm mt-1 h-5">
+            {errors.cardNumber || '\u00A0'}
+          </p>
         </div>
 
         <div>
@@ -86,9 +86,9 @@ function PaymentPage({ onCancel, onSuccess }) {
             className={`border px-3 py-2 rounded w-full ${errors.expiry ? "border-red-500" : ""
               }`}
           />
-          {errors.expiry && (
-            <p className="text-red-600 text-sm mt-1">{errors.expiry}</p>
-          )}
+          <p className="text-red-600 text-sm mt-1 h-5">
+            {errors.expiry || '\u00A0'}
+          </p>
         </div>
 
         <div>
@@ -101,28 +101,29 @@ function PaymentPage({ onCancel, onSuccess }) {
             className={`border px-3 py-2 rounded w-full ${errors.cvv ? "border-red-500" : ""
               }`}
           />
-          {errors.cvv && (
-            <p className="text-red-600 text-sm mt-1">{errors.cvv}</p>
-          )}
+          <p className="text-red-600 text-sm mt-1 h-5">
+            {errors.cvv || '\u00A0'}
+          </p>
         </div>
 
         <div className="flex justify-between">
           <button
             type="button"
             onClick={onCancel}
-            className="bg-gray-400 text-white px-4 py-2 rounded"
+            className="bg-gray-400 text-white md:text-base text-sm px-4 py-2 rounded"
           >
             Cancel
           </button>
           <button
             type="submit"
-            className="bg-green-500 text-white px-4 py-2 rounded"
+            className="bg-green-500 text-white px-4 py-2 md:text-base text-sm rounded"
           >
             Pay
           </button>
         </div>
       </form>
     </div>
+
   );
 }
 export default PaymentPage;

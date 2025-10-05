@@ -142,15 +142,15 @@ export default function ProductCatalog({ cartIconRef }) {
                   alt={product.title}
                   className="mx-auto h-40 object-contain rounded"
                 />
-                <h3 className="text-center text-sm text-gray-700 font-semibold truncate">{product.title}</h3>
-                <p className="text-center text-gray-600 font-bold mt-1">{product.price} $</p>
+                <h3 className="text-center lg:text-base text-sm text-gray-700 font-semibold truncate">{product.title}</h3>
+                <p className="text-center text-gray-600 lg:text-base text-sm font-bold mt-1">{product.price} $</p>
               </div>
             ))}
           </Slider>
         </div>
 
         {/* Content - 70% */}
-        <h1 className="text-center text-3xl font-bold mt-5">Store products</h1>
+        <h1 className="text-center text-3xl font-bold lg:text-3xl text-xl mt-8">Store products</h1>
         <div className="flex flex-col md:flex-row gap-6">
 
           <div className="order-2 md:order-1 flex-[1_1_80%]">
@@ -173,21 +173,21 @@ export default function ProductCatalog({ cartIconRef }) {
                         ref={imgRef}
                         src={product.image}
                         alt={product.title}
-                        className="h-48 object-contain mb-4"
+                        className="md:h-48 h-40 object-contain mb-4"
                       />
-                      <h2 className="font-semibold text-lg mb-2">{product.title}</h2>
-                      <p className="text-gray-700 mb-4">
+                      <h2 className="font-semibold lg:text-lg text-base mb-2">{product.title}</h2>
+                      <p className="text-gray-700 lg:text-base text-sm mb-4">
                         {product.description.slice(0, 100)}...
                       </p>
                       <div className="flex justify-between items-center">
-                        <span className="font-bold">{product.price} $</span>
+                        <span className="font-bold lg:text-lg text-base">{product.price} $</span>
                         <button
                           onClick={(e) => {
                             e.stopPropagation();
                             flyToCart(imgRef);
                             addToCart(product);
                           }}
-                          className="bg-green-500 text-white px-3 py-1 rounded"
+                          className="bg-green-500 md:text-sm text-xs text-white px-3 py-2  rounded"
                         >
                           Add to cart
                         </button>

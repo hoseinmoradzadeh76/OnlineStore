@@ -47,16 +47,16 @@ function CartPage({ setCheckout }) {
           </button>
         </div>
       ) : (
-        <div className="max-w-7xl p-4 flex flex-col md:flex-row gap-8">
+        <div className="max-w-7xl p-4 flex flex-col md:flex-row gap-10">
           {/* لیست کالاها */}
-          <ul className="flex-[1_1_70%]">
+          <ul className="flex-[1_1_75%]">
             {Object.values(cart).map((item) => (
               <li key={item.id} className="flex items-center py-2 border-b w-full">
-                <div className="flex items-center gap-4 w-full">
+                <div className="flex items-center gap-8 w-full">
                   <img
                     src={item.image}
                     alt={item.title}
-                    className="md:w-28 md:h-28 w-20 h-24 object-cover rounded"
+                    className="md:w-32 md:h-36 w-20 h-24 object-cover rounded"
                   />
                   <div className="w-full">
                     
@@ -78,7 +78,7 @@ function CartPage({ setCheckout }) {
                           +
                         </button>
                       </span>
-                      <span className="text-xs md:text-lg text-green-500 whitespace-nowrap">price : {(item.price * item.quantity).toFixed(2)} $</span>
+                      <span className="text-xs md:text-lg text-green-500 whitespace-nowrap"><span className="text-black">price :</span> {(item.price * item.quantity).toFixed(2)} $</span>
                       <button
                         onClick={() => removeFromCart(item.id)}
                         className="text-white px-4 py-2 rounded"
@@ -93,20 +93,20 @@ function CartPage({ setCheckout }) {
           </ul>
 
           {/* سایدبار سمت راست */}
-          <div className="flex-[1_1_30%] p-4 border rounded shadow-md  flex flex-col gap-4 h-[190px]">
+          <div className="flex-[1_1_25%] p-4 border rounded flex flex-col gap-4 h-[190px]">
             <p className="font-bold text-md flex justify-between">
-              <span>Total shopping cart:</span>{" "}
-              <span className="text-green-500">{totalPrice.toFixed(2)} $</span>
+              <span className="lg:text-base text-sm">Total shopping cart:</span>{" "}
+              <span className="text-green-500 lg:text-base text-sm">{totalPrice.toFixed(2)} $</span>
             </p>
             <button
               onClick={() => setShowPayment(true)}
-              className="bg-green-500 text-white px-4 py-2 rounded"
+              className="bg-green-500 text-white lg:text-base text-sm px-4 py-2 rounded"
             >
               Order completion
             </button>
             <button
               onClick={() => setCheckout(false)}
-              className="bg-blue-600 text-white px-4 py-2 rounded"
+              className="bg-blue-600 text-white lg:text-base text-sm px-4 py-2 rounded"
             >
               Return to the store
             </button>
